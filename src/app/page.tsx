@@ -42,9 +42,21 @@ export default function Home() {
         <div className="mt-auto flex w-full max-w-3xl flex-col items-start justify-center pb-16">
           <p className="text-center text-lg font-medium">{description}</p>
           <div className="flex mt-8 lg:mt-16 flex-wrap w-full max-w-full items-stretch justify-center gap-4 lg:gap-10">
-            <Card href="/" title="Docs" text="Find documentation and technical support, and various APIs." />
-            <Card href="/" title="Templates" text="Explore our template library to apply the Elegance SDK." />
-            <Card href="/" title="Examples" text="Discover example applications you can build with SingleStoreDB." />
+            <Card
+              href="https://github.com/singlestore-labs/elegance-sdk/tree/main/packages/singlestore-elegance-sdk#usage"
+              title="Docs"
+              text="Find documentation and technical support, and various APIs."
+            />
+            <Card
+              href="https://github.com/singlestore-labs/elegance-sdk/tree/main/packages/singlestore-elegance-sdk#templates"
+              title="Templates"
+              text="Explore our template library to apply the Elegance SDK."
+            />
+            <Card
+              href="https://github.com/singlestore-labs/elegance-sdk/tree/main/packages/singlestore-elegance-sdk#example-apps"
+              title="Examples"
+              text="Discover example applications you can build with SingleStoreDB."
+            />
           </div>
         </div>
       </div>
