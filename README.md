@@ -1,5 +1,15 @@
 # SingleStore Elegance SDK Next.js Template
 
+## Installation
+
+You can install this template by running:
+
+```sh
+npx create-singlestoredb-app --template elegance-next
+```
+
+or by clicking the "Use this template" button on GitHub.
+
 ## Start Development Environment
 
 1. Sign up for [SingleStore](https://www.singlestore.com/) and create a database
