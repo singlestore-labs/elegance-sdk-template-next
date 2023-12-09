@@ -39,9 +39,14 @@ export default function Home() {
           <Image src="/elegance-sdk.svg" alt="Elegance SDK Logo" fill />
         </div>
 
-        <div className="mt-auto flex w-full max-w-3xl flex-col items-start justify-center pb-16">
+        <div className="mt-auto flex w-full max-w-4xl flex-col items-start justify-center pb-16">
           <p className="text-center text-lg font-medium">{description}</p>
           <div className="flex mt-8 lg:mt-16 flex-wrap w-full max-w-full items-stretch justify-center gap-4 lg:gap-10">
+            <Card
+              href="https://www.singlestore.com/blog/how-to-get-started-with-elegance-sdk/"
+              title="Get started"
+              text="Your step-by-step guide to using Elegance SDK"
+            />
             <Card
               href="https://github.com/singlestore-labs/elegance-sdk/tree/main/packages/singlestore-elegance-sdk#usage"
               title="Docs"
