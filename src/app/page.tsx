@@ -1,5 +1,7 @@
+import { eleganceServerClient } from "@/services/eleganceServerClient";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const description = `SingleStore Elegance SDK is an NPM package that helps developers quickly and easily connect to SingleStoreDB, and build React.js-based applications with SingleStore Kai™ and MySQL connection support.`;
 <p className="text-center text-lg font-medium">{description}</p>
@@ -11,6 +13,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
+  useEffect(() => {
+    eleganceServerClient.connection.query(
+      'CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME);'
+    );
+  },)
+
   return (
     <main className="relative flex min-h-screen w-full max-w-full flex-col overflow-y-auto overflow-x-hidden">
       <Image
