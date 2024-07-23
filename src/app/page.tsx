@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 const description = `SingleStore Elegance SDK is an NPM package that helps developers quickly and easily connect to SingleStoreDB, and build React.js-based applications with SingleStore Kai™ and MySQL connection support.`;
+<p className="text-center text-lg font-medium">{description}</p>
+const mysqlCommand = `mysql -u "${process.env.DB_USER}" -h "${process.env.DB_HOST}" -P ${process.env.DB_PORT} --default-auth=mysql_native_password --password=${process.env.DB_PASSWORD} ${process.env.DB_NAME}`
 
 export const metadata: Metadata = {
   title: "SingleStore Elegance SDK",
@@ -40,7 +42,30 @@ export default function Home() {
         </div>
 
         <div className="mt-auto flex w-full max-w-4xl flex-col items-start justify-center pb-16">
-          <p className="text-center text-lg font-medium">{description}</p>
+          {
+            process.env.DB_HOST ? (
+              <div style={{ marginBottom: 36 }}>
+                <p className="text-lg">
+                  1. Run queries using the <span style={{ fontFamily: "monospace" }}>eleganceServerClient </span> already created for you.
+                </p>
+                <p style={{ width: "100%", backgroundColor: "black", fontFamily: "monospace", margin: 22, fontSize: 14 }}>
+                  eleganceServerClient.connection.query(
+                  <br />
+                  'CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME)'
+                  <br />
+                  );
+                </p>
+                <p className="text-lg" style={{ marginTop: 22 }}>
+                  2. Connect through MySQL CLI by running the following command on your terminal:
+                </p>
+                <p style={{ width: "100%", backgroundColor: "black", fontFamily: "monospace", margin: 22, fontSize: 14 }}>
+                  {mysqlCommand}
+                </p>
+              </div>
+            ) : (
+              <p className="text-center text-lg font-medium">{description}</p>
+            )
+          }
           <div className="flex mt-8 lg:mt-16 flex-wrap w-full max-w-full items-stretch justify-center gap-4 lg:gap-10">
             <Card
               href="https://www.singlestore.com/blog/how-to-get-started-with-elegance-sdk/"
@@ -65,7 +90,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </main >
   );
 }
 
