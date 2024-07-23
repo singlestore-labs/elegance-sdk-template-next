@@ -10,7 +10,7 @@ fetch("https://portal.singlestore.com/static/ca/singlestore_bundle.pem")
   })
 
 let extraSettings;
-if (process.env.tier === "shared") {
+if (process.env.TIER === "shared") {
   extraSettings = {
     ssl: {
       cert
