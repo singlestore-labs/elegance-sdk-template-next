@@ -51,7 +51,7 @@ export default function Home() {
                 <p style={{ width: "100%", backgroundColor: "black", fontFamily: "monospace", margin: 22, fontSize: 14 }}>
                   eleganceServerClient.connection.query(
                   <br />
-                  'CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME)'
+                  &apos;CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME)&apos;
                   <br />
                   );
                 </p>
