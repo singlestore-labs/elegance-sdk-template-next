@@ -9,6 +9,14 @@ fetch("https://portal.singlestore.com/static/ca/singlestore_bundle.pem")
     });
   })
 
+let extraSettings;
+if (process.env.tier === "shared") {
+  extraSettings = {
+    ssl: {
+      cert
+    }
+  }
+}
 export const eleganceServerClient = createEleganceServerClient("mysql", {
   connection: {
     host: process.env.DB_HOST,
@@ -16,9 +24,8 @@ export const eleganceServerClient = createEleganceServerClient("mysql", {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     port: Number(process.env.DB_PORT),
-    ssl: {
-      cert
-    }
+    ...extraSettings
+   
   },
   ai: {
     openai: {
