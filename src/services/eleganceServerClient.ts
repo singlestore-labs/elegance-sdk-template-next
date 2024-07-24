@@ -25,7 +25,6 @@ export const eleganceServerClient = createEleganceServerClient("mysql", {
     database: process.env.DB_NAME,
     port: Number(process.env.DB_PORT),
     ...extraSettings
-   
   },
   ai: {
     openai: {

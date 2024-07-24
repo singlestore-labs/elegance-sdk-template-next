@@ -1,9 +1,7 @@
-import { SessionButton } from "@/app/session";
 import type { Metadata } from "next";
 import Image from "next/image";
 
 const description = `SingleStore Elegance SDK is an NPM package that helps developers quickly and easily connect to SingleStoreDB, and build React.js-based applications with SingleStore Kai™ and MySQL connection support.`;
-<p className="text-center text-lg font-medium">{description}</p>
 const mysqlCommand = `mysql -u "${process.env.DB_USER}" -h "${process.env.DB_HOST}" -P ${process.env.DB_PORT} --default-auth=mysql_native_password --password=${process.env.DB_PASSWORD} ${process.env.DB_NAME}`
 
 export const metadata: Metadata = {
@@ -12,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-    // eleganceServerClient.connection.query(
-    //   'CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME);'
-    // );
+  // eleganceServerClient.connection.query(
+  //   'CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME);'
+  // );
 
   return (
     <main className="relative flex min-h-screen w-full max-w-full flex-col overflow-y-auto overflow-x-hidden">
@@ -31,7 +29,14 @@ export default function Home() {
           <a className="inline-flex items-center justify-center" href="https://singlestore.com" target="_blank">
             <Image src="/singlestore.svg" alt="SingleStore Logo" width={136} height={28.45} priority />
           </a>
-         <SessionButton/>
+          <a
+            className="hover:bg-s2-link hover:border-s2-link inline-flex items-center justify-center rounded border border-white px-4 py-1 text-center transition-all"
+            href="https://singlestore.com/cloud-trial"
+            target="_blank"
+          >
+            Try Free
+            <span className="inline-block ml-2 text-3xl leading-none pb-1">&rsaquo;</span>
+          </a>
         </div>
 
         <div className="mt-auto relative h-auto w-[20.69%] min-w-[298px] max-w-[894px]">
