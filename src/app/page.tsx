@@ -1,5 +1,4 @@
 import { SessionButton } from "@/app/session";
-import { eleganceServerClient } from "@/services/eleganceServerClient";
 import type { Metadata } from "next";
 import Image from "next/image";
 
