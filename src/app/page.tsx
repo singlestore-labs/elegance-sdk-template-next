@@ -10,10 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  // eleganceServerClient.connection.query(
-  //   'CREATE TABLE users (id BIGINT AUTO_INCREMENT PRIMARY KEY, created_at DATETIME);'
-  // );
-
   return (
     <main className="relative flex min-h-screen w-full max-w-full flex-col overflow-y-auto overflow-x-hidden">
       <Image

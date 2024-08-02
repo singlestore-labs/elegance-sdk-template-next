@@ -1,22 +1,23 @@
 import { createEleganceServerClient } from "@singlestore/elegance-sdk/server";
 
-let cert;
-
-fetch("https://portal.singlestore.com/static/ca/singlestore_bundle.pem")
-  .then(function (response) {
-    response.text().then(function (text) {
-      cert = text;
-    });
-  })
-
 let extraSettings;
+
 if (process.env.TIER === "shared") {
+  let cert;
+  fetch("https://portal.singlestore.com/static/ca/singlestore_bundle.pem")
+    .then(function (response) {
+      response.text().then(function (text) {
+        cert = text;
+      });
+    })
+
   extraSettings = {
     ssl: {
       cert
     }
   }
 }
+
 export const eleganceServerClient = createEleganceServerClient("mysql", {
   connection: {
     host: process.env.DB_HOST,
